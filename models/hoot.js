@@ -8,7 +8,6 @@ const commentSchema = new mongoose.Schema(
         required: true
       },
       author: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-      comments: [commentSchema]
     },
     { timestamps: true }
   );
@@ -28,6 +27,7 @@ const hootSchema = new mongoose.Schema(
         enum: ['News', 'Sports', 'Games', 'Movies', 'Music', 'Television'],
       },
       author: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+      comments: [commentSchema]
     },
     { timestamps: true }
   );
